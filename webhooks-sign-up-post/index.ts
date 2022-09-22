@@ -35,7 +35,7 @@ const httpTrigger: AzureFunction = async function (
           dataReference: body.datum.reference,
         };
       },
-      body.datum.data
+      null
     );
 
     context.res = {
