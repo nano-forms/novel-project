@@ -1,0 +1,18 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "direction": "in",
+      "methods": ["post"],
+      "name": "req",
+      "route": "v1/webhooks/company-information",
+      "type": "httpTrigger"
+    },
+    {
+      "direction": "out",
+      "name": "res",
+      "type": "http"
+    }
+  ],
+  "scriptFile": "../dist/webhooks-company-information-post/index.js"
+}
