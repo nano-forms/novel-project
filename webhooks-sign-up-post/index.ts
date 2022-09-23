@@ -38,6 +38,10 @@ const httpTrigger: AzureFunction = async function (
       null
     );
 
+    context.log(
+      JSON.stringify({ location: `/${companyInformationForm.reference}` })
+    );
+
     context.res = {
       body: { location: `/${companyInformationForm.reference}` },
       status: 200,

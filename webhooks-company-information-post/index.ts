@@ -29,6 +29,10 @@ const httpTrigger: AzureFunction = async function (
       body.datum.data
     );
 
+    context.log(
+      JSON.stringify({ location: `/${companyDocumentsForm.reference}` })
+    );
+
     context.res = {
       body: { location: `/${companyDocumentsForm.reference}` },
       status: 200,

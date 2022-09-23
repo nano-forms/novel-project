@@ -20,7 +20,7 @@ export const NOVEL_SIGN_UP: FormRequest = {
       id: "emailAddress",
       label: "Email Address",
       options: null,
-
+      placeholder: null,
       type: "short_text",
       validations: {
         pattern: null,
@@ -29,9 +29,7 @@ export const NOVEL_SIGN_UP: FormRequest = {
       value: null,
     },
   ],
-  metadata: {
-    type: "sign_up",
-  },
+  metadata: {},
   status: "enabled",
   subtitle:
     "Novel is all your business financial apps in one place: banking, payouts, invoicing, cards & more",
@@ -60,6 +58,7 @@ export const NOVEL_COMPANY_INFORMATION: FormRequest = {
       id: "legalBusinessName",
       label: "Legal Business Name",
       options: null,
+      placeholder: null,
       type: "short_text",
       validations: {
         pattern: null,
@@ -84,6 +83,7 @@ export const NOVEL_COMPANY_INFORMATION: FormRequest = {
           label: "Partnership",
         },
       ],
+      placeholder: null,
       type: "dropdown",
       validations: {
         pattern: null,
@@ -98,6 +98,7 @@ export const NOVEL_COMPANY_INFORMATION: FormRequest = {
       id: "employerIdNumber",
       label: "Employer ID Number (EIN)",
       options: null,
+      placeholder: null,
       type: "short_text",
       validations: {
         pattern: null,
@@ -476,6 +477,7 @@ export const NOVEL_COMPANY_INFORMATION: FormRequest = {
           label: "Wood Product Manufacturing",
         },
       ],
+      placeholder: null,
       type: "dropdown",
       validations: {
         pattern: null,
@@ -490,6 +492,7 @@ export const NOVEL_COMPANY_INFORMATION: FormRequest = {
       id: "businessAddress",
       label: "Business Address",
       options: null,
+      placeholder: null,
       type: "short_text",
       validations: {
         pattern: null,
@@ -498,9 +501,7 @@ export const NOVEL_COMPANY_INFORMATION: FormRequest = {
       value: "One Apple Park Way, Cupertino, CA 95014, United States",
     },
   ],
-  metadata: {
-    type: "company_information",
-  },
+  metadata: {},
   status: "enabled",
   subtitle:
     "This information will not be displayed publicly. Novel currently only supports U.S. entities",
@@ -530,6 +531,7 @@ export const NOVEL_COMPANY_DOCUMENTS: FormRequest = {
       id: "companyFormationDocuments",
       label: "Upload Company Formation Documents",
       options: null,
+      placeholder: null,
       type: "file_upload",
       validations: {
         pattern: null,
@@ -538,9 +540,7 @@ export const NOVEL_COMPANY_DOCUMENTS: FormRequest = {
       value: null,
     },
   ],
-  metadata: {
-    type: "company_documents",
-  },
+  metadata: {},
   status: "enabled",
   subtitle: "",
   thankYouPage: {
