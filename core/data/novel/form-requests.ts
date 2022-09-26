@@ -22,8 +22,13 @@ export const NOVEL_SIGN_UP: FormRequest = {
       options: null,
       placeholder: null,
       type: "short_text",
+      validationMessages: {
+        emailAddress: "Please enter a valid email address",
+        patterns: null,
+        required: "Please enter your email address",
+      },
       validations: {
-        pattern: null,
+        patterns: null,
         required: true,
       },
       value: null,
@@ -60,8 +65,13 @@ export const NOVEL_COMPANY_INFORMATION: FormRequest = {
       options: null,
       placeholder: null,
       type: "short_text",
+      validationMessages: {
+        emailAddress: null,
+        patterns: null,
+        required: "Please enter your legal business name",
+      },
       validations: {
-        pattern: null,
+        patterns: null,
         required: true,
       },
       value: "Apple Inc.",
@@ -85,8 +95,13 @@ export const NOVEL_COMPANY_INFORMATION: FormRequest = {
       ],
       placeholder: null,
       type: "dropdown",
+      validationMessages: {
+        emailAddress: null,
+        patterns: null,
+        required: "Please select your company type",
+      },
       validations: {
-        pattern: null,
+        patterns: null,
         required: true,
       },
       value: "Corporation",
@@ -100,8 +115,13 @@ export const NOVEL_COMPANY_INFORMATION: FormRequest = {
       options: null,
       placeholder: null,
       type: "short_text",
+      validationMessages: {
+        emailAddress: null,
+        patterns: null,
+        required: "Please enter your employer ID number (EIN)",
+      },
       validations: {
-        pattern: null,
+        patterns: null,
         required: true,
       },
       value: "94-2404110",
@@ -479,8 +499,13 @@ export const NOVEL_COMPANY_INFORMATION: FormRequest = {
       ],
       placeholder: null,
       type: "dropdown",
+      validationMessages: {
+        emailAddress: null,
+        patterns: null,
+        required: "Please select your company industry",
+      },
       validations: {
-        pattern: null,
+        patterns: null,
         required: true,
       },
       value: "Computer and Electronic Product Manufacturing",
@@ -494,8 +519,13 @@ export const NOVEL_COMPANY_INFORMATION: FormRequest = {
       options: null,
       placeholder: null,
       type: "short_text",
+      validationMessages: {
+        emailAddress: null,
+        patterns: null,
+        required: "Please enter your business address",
+      },
       validations: {
-        pattern: null,
+        patterns: null,
         required: true,
       },
       value: "One Apple Park Way, Cupertino, CA 95014, United States",
@@ -533,9 +563,14 @@ export const NOVEL_COMPANY_DOCUMENTS: FormRequest = {
       options: null,
       placeholder: null,
       type: "file_upload",
+      validationMessages: {
+        emailAddress: null,
+        patterns: null,
+        required: "Please upload your company formation documents",
+      },
       validations: {
-        pattern: null,
-        required: false,
+        patterns: null,
+        required: true,
       },
       value: null,
     },

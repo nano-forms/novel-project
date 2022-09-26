@@ -10,14 +10,14 @@
     "test": "echo \"No tests yet...\""
   },
   "dependencies": {
-    "@nano-forms/core": "^0.1.7",
+    "@nano-forms/core": "^0.1.10",
     "axios": "^0.27.2",
     "tslib": "^2.4.0",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@azure/functions": "^3.0.0",
-    "@types/node": "^18.7.18",
+    "@types/node": "^18.7.21",
     "typescript": "^4.8.3"
   }
 }
