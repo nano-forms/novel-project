@@ -39,6 +39,31 @@ const httpTrigger: AzureFunction = async function (
       body.datum.data
     );
 
+    try {
+      await axios.post(
+        "https://api.airtable.com/v0/appSP7O2Jls9I87FA/Novel%20Project",
+        {
+          records: [
+            {
+              fields: {
+                "Email Address": body.datum.data.emailAddress,
+                "Legal Business Name": body.datum.data.legalBusinessName,
+                "Company Type": body.datum.data.companyType,
+                "Company Industry": body.datum.data.companyIndustry,
+              },
+            },
+          ],
+        },
+        {
+          headers: {
+            Authorization: "Bearer keywUEWZniOrHqDgC",
+          },
+        }
+      );
+    } catch (error) {
+      context.log(error.message);
+    }
+
     context.res = {
       body: { location: `/${companyDocumentsForm.reference}` },
       status: 200,
