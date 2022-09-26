@@ -13,24 +13,30 @@ const httpTrigger: AzureFunction = async function (
       form: Form;
     } = req.body;
 
-    const companyDocumentsForm: Form = await formClient.createFromTemplate(
-      NOVEL_COMPANY_DOCUMENTS,
+    const companyInformationForm: Form = await formClient.createFromTemplate(
+      body.form,
       (formRequest: FormRequest) => {
         return {
           ...formRequest,
-          // actions: {
-          //   previous: {
-          //     uri: `/${signUpForm.reference}`,
-          //   },
-          // },
-          dataReference: body.datum.reference,
         };
       },
       body.datum.data
     );
 
-    context.log(
-      JSON.stringify({ location: `/${companyDocumentsForm.reference}` })
+    const companyDocumentsForm: Form = await formClient.createFromTemplate(
+      NOVEL_COMPANY_DOCUMENTS,
+      (formRequest: FormRequest) => {
+        return {
+          ...formRequest,
+          actions: {
+            previous: {
+              uri: `/${companyInformationForm.reference}`,
+            },
+          },
+          dataReference: body.datum.reference,
+        };
+      },
+      body.datum.data
     );
 
     context.res = {
