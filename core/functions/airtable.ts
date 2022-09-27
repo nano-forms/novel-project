@@ -11,11 +11,7 @@ export async function airtableUpsert(
     await axios.patch(
       "https://api.airtable.com/v0/appSP7O2Jls9I87FA/Novel%20Project",
       {
-        records: [
-          {
-            fields,
-          },
-        ],
+        records: [{ id, fields }],
       },
       {
         headers: {
@@ -53,6 +49,9 @@ export async function airtableFindId(
       id: string;
     }>;
   }>(`https://api.airtable.com/v0/appSP7O2Jls9I87FA/Novel%20Project`, {
+    headers: {
+      Authorization: "Bearer keywUEWZniOrHqDgC",
+    },
     params: {
       filterByFormula: `{${key}} = '${value}'`,
     },
