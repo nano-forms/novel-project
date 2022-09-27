@@ -1,6 +1,6 @@
 import { AzureFunction, Context, HttpRequest } from "@azure/functions";
 import { Datum, Form, FormRequest } from "@nano-forms/core";
-import { formClient, NOVEL_COMPANY_INFORMATION } from "../core";
+import { airtableUpsert, formClient, NOVEL_COMPANY_INFORMATION } from "../core";
 
 const httpTrigger: AzureFunction = async function (
   context: Context,
@@ -11,6 +11,18 @@ const httpTrigger: AzureFunction = async function (
       datum: Datum;
       form: Form;
     } = req.body;
+
+    try {
+      await airtableUpsert(
+        "Email Address",
+        body.datum.data.emailAddress as string,
+        {
+          "Email Address": body.datum.data.emailAddress,
+        }
+      );
+    } catch (error) {
+      context.log(error.message);
+    }
 
     const signUpForm: Form = await formClient.createFromTemplate(
       body.form,

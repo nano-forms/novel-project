@@ -1,7 +1,7 @@
 import { AzureFunction, Context, HttpRequest } from "@azure/functions";
 import axios from "axios";
 import { Datum, Form, FormRequest } from "@nano-forms/core";
-import { formClient, NOVEL_COMPANY_DOCUMENTS } from "../core";
+import { airtableUpsert, formClient, NOVEL_COMPANY_DOCUMENTS } from "../core";
 
 const httpTrigger: AzureFunction = async function (
   context: Context,
@@ -12,6 +12,21 @@ const httpTrigger: AzureFunction = async function (
       datum: Datum;
       form: Form;
     } = req.body;
+
+    try {
+      await airtableUpsert(
+        "Email Address",
+        body.datum.data.emailAddress as string,
+        {
+          "Email Address": body.datum.data.emailAddress,
+          "Legal Business Name": body.datum.data.legalBusinessName,
+          "Company Type": body.datum.data.companyType,
+          "Company Industry": body.datum.data.companyIndustry,
+        }
+      );
+    } catch (error) {
+      context.log(error.message);
+    }
 
     const companyInformationForm: Form = await formClient.createFromTemplate(
       body.form,
@@ -38,31 +53,6 @@ const httpTrigger: AzureFunction = async function (
       },
       body.datum.data
     );
-
-    try {
-      await axios.post(
-        "https://api.airtable.com/v0/appSP7O2Jls9I87FA/Novel%20Project",
-        {
-          records: [
-            {
-              fields: {
-                "Email Address": body.datum.data.emailAddress,
-                "Legal Business Name": body.datum.data.legalBusinessName,
-                "Company Type": body.datum.data.companyType,
-                "Company Industry": body.datum.data.companyIndustry,
-              },
-            },
-          ],
-        },
-        {
-          headers: {
-            Authorization: "Bearer keywUEWZniOrHqDgC",
-          },
-        }
-      );
-    } catch (error) {
-      context.log(error.message);
-    }
 
     context.res = {
       body: { location: `/${companyDocumentsForm.reference}` },
