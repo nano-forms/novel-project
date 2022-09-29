@@ -8,7 +8,7 @@ export const NOVEL_SIGN_UP: FormRequest = {
     color: "#000000",
     logo: "https://assets.website-files.com/60425402fee4250aed708db0/60f9d46f08c918299f20bddc_Combination%20mark%20color%20logo%20black%20text.svg",
   },
-  buttons_text: {
+  buttons: {
     submit: "Apply Now",
   },
   dataReference: null,
@@ -51,7 +51,7 @@ export const NOVEL_COMPANY_INFORMATION: FormRequest = {
     color: "#000000",
     logo: "https://assets.website-files.com/60425402fee4250aed708db0/60f9d46f08c918299f20bddc_Combination%20mark%20color%20logo%20black%20text.svg",
   },
-  buttons_text: {
+  buttons: {
     submit: "Continue",
   },
   dataReference: null,
@@ -549,7 +549,7 @@ export const NOVEL_COMPANY_DOCUMENTS: FormRequest = {
     color: "#000000",
     logo: "https://assets.website-files.com/60425402fee4250aed708db0/60f9d46f08c918299f20bddc_Combination%20mark%20color%20logo%20black%20text.svg",
   },
-  buttons_text: {
+  buttons: {
     submit: "Submit",
   },
   dataReference: null,
