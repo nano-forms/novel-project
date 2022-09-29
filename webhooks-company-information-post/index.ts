@@ -1,5 +1,4 @@
 import { AzureFunction, Context, HttpRequest } from "@azure/functions";
-import axios from "axios";
 import { Datum, Form, FormRequest } from "@nano-forms/core";
 import { airtableUpsert, formClient, NOVEL_COMPANY_DOCUMENTS } from "../core";
 
@@ -33,6 +32,7 @@ const httpTrigger: AzureFunction = async function (
       (formRequest: FormRequest) => {
         return {
           ...formRequest,
+          dataReference: body.datum.reference,
         };
       },
       body.datum.data

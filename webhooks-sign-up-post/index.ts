@@ -29,6 +29,7 @@ const httpTrigger: AzureFunction = async function (
       (formRequest: FormRequest) => {
         return {
           ...formRequest,
+          dataReference: body.datum.reference,
         };
       },
       body.datum.data
