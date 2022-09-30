@@ -82,17 +82,20 @@ export const NOVEL_COMPANY_INFORMATION: FormRequest = {
       hint: null,
       id: "companyType",
       label: "Company Type",
-      options: [
-        {
-          label: "Corporation",
-        },
-        {
-          label: "LLC",
-        },
-        {
-          label: "Partnership",
-        },
-      ],
+      options: {
+        items: [
+          {
+            label: "Corporation",
+          },
+          {
+            label: "LLC",
+          },
+          {
+            label: "Partnership",
+          },
+        ],
+        uri: null,
+      },
       placeholder: null,
       type: "dropdown",
       validationMessages: {
@@ -146,357 +149,362 @@ export const NOVEL_COMPANY_INFORMATION: FormRequest = {
       hint: null,
       id: "companyIndustry",
       label: "Company Industry",
-      options: [
-        {
-          label: "Accommodation",
-        },
-        {
-          label: "Accommodation and Food Services",
-        },
-        {
-          label: "Administrative and Support Services",
-        },
-        {
-          label:
-            "Administrative and Support and Waste Management and Remediation Services",
-        },
-        {
-          label: "Agriculture, Forestry, Fishing and Hunting",
-        },
-        {
-          label: "Air Transportation",
-        },
-        {
-          label: "Ambulatory Health Care Services",
-        },
-        {
-          label: "Amusement, Gambling, and Recreation Industries",
-        },
-        {
-          label: "Animal Production",
-        },
-        {
-          label: "Apparel Manufacturing",
-        },
-        {
-          label: "Arts, Entertainment, and Recreation",
-        },
-        {
-          label: "Beverage and Tobacco Product Manufacturing",
-        },
-        {
-          label: "Broadcasting (except Internet)",
-        },
-        {
-          label: "Building Material and Garden Equipment and Supplies Dealers",
-        },
-        {
-          label: "Chemical Manufacturing",
-        },
-        {
-          label: "Clothing and Clothing Accessories Stores",
-        },
-        {
-          label: "Computer and Electronic Product Manufacturing",
-        },
-        {
-          label: "Construction",
-        },
-        {
-          label: "Construction of Buildings",
-        },
-        {
-          label: "Couriers and Messengers",
-        },
-        {
-          label: "Credit Intermediation and Related Activities",
-        },
-        {
-          label: "Crop Production",
-        },
-        {
-          label: "Data Processing, Hosting, and Related Services",
-        },
-        {
-          label: "Education and Health Services",
-        },
-        {
-          label: "Educational Services",
-        },
-        {
-          label: "Electrical Equipment, Appliance, and Component Manufacturing",
-        },
-        {
-          label: "Electronics and Appliance Stores",
-        },
-        {
-          label: "Fabricated Metal Product Manufacturing",
-        },
-        {
-          label: "Finance and Insurance",
-        },
-        {
-          label: "Financial Activities",
-        },
-        {
-          label: "Fishing, Hunting and Trapping",
-        },
-        {
-          label: "Food Manufacturing",
-        },
-        {
-          label: "Food Services and Drinking Places",
-        },
-        {
-          label: "Food and Beverage Stores",
-        },
-        {
-          label: "Forestry and Logging",
-        },
-        {
-          label: "Funds, Trusts, and Other Financial Vehicles",
-        },
-        {
-          label: "Furniture and Home Furnishings Stores",
-        },
-        {
-          label: "Furniture and Related Product Manufacturing",
-        },
-        {
-          label: "Gasoline Stations",
-        },
-        {
-          label: "General Merchandise Stores",
-        },
-        {
-          label: "Goods-Producing Industries",
-        },
-        {
-          label: "Health Care and Social Assistance",
-        },
-        {
-          label: "Health and Personal Care Stores",
-        },
-        {
-          label: "Heavy and Civil Engineering Construction",
-        },
-        {
-          label: "Hospitals",
-        },
-        {
-          label: "Information",
-        },
-        {
-          label: "Insurance Carriers and Related Activities",
-        },
-        {
-          label: "Internet Publishing and Broadcasting",
-        },
-        {
-          label: "Leather and Allied Product Manufacturing",
-        },
-        {
-          label: "Leisure and Hospitality",
-        },
-        {
-          label:
-            "Lessors of Nonfinancial Intangible Assets (except Copyrighted Works)",
-        },
-        {
-          label: "Machinery Manufacturing",
-        },
-        {
-          label: "Management of Companies and Enterprises",
-        },
-        {
-          label: "Manufacturing",
-        },
-        {
-          label: "Merchant Wholesalers, Durable Goods",
-        },
-        {
-          label: "Merchant Wholesalers, Nondurable Goods",
-        },
-        {
-          label: "Mining (except Oil and Gas)",
-        },
-        {
-          label: "Mining, Quarrying, and Oil and Gas Extraction",
-        },
-        {
-          label: "Miscellaneous Manufacturing",
-        },
-        {
-          label: "Miscellaneous Store Retailers",
-        },
-        {
-          label: "Monetary Authorities - Central Bank",
-        },
-        {
-          label: "Motion Picture and Sound Recording Industries",
-        },
-        {
-          label: "Motor Vehicle and Parts Dealers",
-        },
-        {
-          label: "Museums, Historical Sites, and Similar Institutions",
-        },
-        {
-          label: "Natural Resources and Mining",
-        },
-        {
-          label: "Nonmetallic Mineral Product Manufacturing",
-        },
-        {
-          label: "Nonstore Retailers",
-        },
-        {
-          label: "Nursing and Residential Care Facilities",
-        },
-        {
-          label: "Oil and Gas Extraction",
-        },
-        {
-          label: "Other Information Services",
-        },
-        {
-          label: "Other Services (except Public Administration)",
-        },
-        {
-          label: "Paper Manufacturing",
-        },
-        {
-          label: "Performing Arts, Spectator Sports, and Related Industries",
-        },
-        {
-          label: "Personal and Laundry Services",
-        },
-        {
-          label: "Petroleum and Coal Products Manufacturing",
-        },
-        {
-          label: "Pipeline Transportation",
-        },
-        {
-          label: "Plastics and Rubber Products Manufacturing",
-        },
-        {
-          label: "Postal Service",
-        },
-        {
-          label: "Primary Metal Manufacturing",
-        },
-        {
-          label: "Printing and Related Support Activities",
-        },
-        {
-          label: "Private Households",
-        },
-        {
-          label: "Professional and Business Services",
-        },
-        {
-          label: "Professional, Scientific, and Technical Services",
-        },
-        {
-          label: "Publishing Industries (except Internet)",
-        },
-        {
-          label: "Rail Transportation",
-        },
-        {
-          label: "Real Estate",
-        },
-        {
-          label: "Real Estate and Rental and Leasing",
-        },
-        {
-          label:
-            "Religious, Grantmaking, Civic, Professional, and Similar Organizations",
-        },
-        {
-          label: "Rental and Leasing Services",
-        },
-        {
-          label: "Repair and Maintenance",
-        },
-        {
-          label: "Retail Trade",
-        },
-        {
-          label: "Scenic and Sightseeing Transportation",
-        },
-        {
-          label:
-            "Securities, Commodity Contracts, and Other Financial Investments and Related Activities",
-        },
-        {
-          label: "Service-Providing Industries",
-        },
-        {
-          label: "Social Assistance",
-        },
-        {
-          label: "Specialty Trade Contractors",
-        },
-        {
-          label: "Sporting Goods, Hobby, Book, and Music Stores",
-        },
-        {
-          label: "Support Activities for Agriculture and Forestry",
-        },
-        {
-          label: "Support Activities for Mining",
-        },
-        {
-          label: "Support Activities for Transportation",
-        },
-        {
-          label: "Telecommunications",
-        },
-        {
-          label: "Textile Mills",
-        },
-        {
-          label: "Textile Product Mills",
-        },
-        {
-          label: "Trade, Transportation, and Utilities",
-        },
-        {
-          label: "Transit and Ground Passenger Transportation",
-        },
-        {
-          label: "Transportation Equipment Manufacturing",
-        },
-        {
-          label: "Transportation and Warehousing",
-        },
-        {
-          label: "Truck Transportation",
-        },
-        {
-          label: "Utilities",
-        },
-        {
-          label: "Warehousing and Storage",
-        },
-        {
-          label: "Waste Management and Remediation Services",
-        },
-        {
-          label: "Water Transportation",
-        },
-        {
-          label: "Wholesale Electronic Markets and Agents and Brokers",
-        },
-        {
-          label: "Wholesale Trade",
-        },
-        {
-          label: "Wood Product Manufacturing",
-        },
-      ],
+      options: {
+        items: [
+          {
+            label: "Accommodation",
+          },
+          {
+            label: "Accommodation and Food Services",
+          },
+          {
+            label: "Administrative and Support Services",
+          },
+          {
+            label:
+              "Administrative and Support and Waste Management and Remediation Services",
+          },
+          {
+            label: "Agriculture, Forestry, Fishing and Hunting",
+          },
+          {
+            label: "Air Transportation",
+          },
+          {
+            label: "Ambulatory Health Care Services",
+          },
+          {
+            label: "Amusement, Gambling, and Recreation Industries",
+          },
+          {
+            label: "Animal Production",
+          },
+          {
+            label: "Apparel Manufacturing",
+          },
+          {
+            label: "Arts, Entertainment, and Recreation",
+          },
+          {
+            label: "Beverage and Tobacco Product Manufacturing",
+          },
+          {
+            label: "Broadcasting (except Internet)",
+          },
+          {
+            label:
+              "Building Material and Garden Equipment and Supplies Dealers",
+          },
+          {
+            label: "Chemical Manufacturing",
+          },
+          {
+            label: "Clothing and Clothing Accessories Stores",
+          },
+          {
+            label: "Computer and Electronic Product Manufacturing",
+          },
+          {
+            label: "Construction",
+          },
+          {
+            label: "Construction of Buildings",
+          },
+          {
+            label: "Couriers and Messengers",
+          },
+          {
+            label: "Credit Intermediation and Related Activities",
+          },
+          {
+            label: "Crop Production",
+          },
+          {
+            label: "Data Processing, Hosting, and Related Services",
+          },
+          {
+            label: "Education and Health Services",
+          },
+          {
+            label: "Educational Services",
+          },
+          {
+            label:
+              "Electrical Equipment, Appliance, and Component Manufacturing",
+          },
+          {
+            label: "Electronics and Appliance Stores",
+          },
+          {
+            label: "Fabricated Metal Product Manufacturing",
+          },
+          {
+            label: "Finance and Insurance",
+          },
+          {
+            label: "Financial Activities",
+          },
+          {
+            label: "Fishing, Hunting and Trapping",
+          },
+          {
+            label: "Food Manufacturing",
+          },
+          {
+            label: "Food Services and Drinking Places",
+          },
+          {
+            label: "Food and Beverage Stores",
+          },
+          {
+            label: "Forestry and Logging",
+          },
+          {
+            label: "Funds, Trusts, and Other Financial Vehicles",
+          },
+          {
+            label: "Furniture and Home Furnishings Stores",
+          },
+          {
+            label: "Furniture and Related Product Manufacturing",
+          },
+          {
+            label: "Gasoline Stations",
+          },
+          {
+            label: "General Merchandise Stores",
+          },
+          {
+            label: "Goods-Producing Industries",
+          },
+          {
+            label: "Health Care and Social Assistance",
+          },
+          {
+            label: "Health and Personal Care Stores",
+          },
+          {
+            label: "Heavy and Civil Engineering Construction",
+          },
+          {
+            label: "Hospitals",
+          },
+          {
+            label: "Information",
+          },
+          {
+            label: "Insurance Carriers and Related Activities",
+          },
+          {
+            label: "Internet Publishing and Broadcasting",
+          },
+          {
+            label: "Leather and Allied Product Manufacturing",
+          },
+          {
+            label: "Leisure and Hospitality",
+          },
+          {
+            label:
+              "Lessors of Nonfinancial Intangible Assets (except Copyrighted Works)",
+          },
+          {
+            label: "Machinery Manufacturing",
+          },
+          {
+            label: "Management of Companies and Enterprises",
+          },
+          {
+            label: "Manufacturing",
+          },
+          {
+            label: "Merchant Wholesalers, Durable Goods",
+          },
+          {
+            label: "Merchant Wholesalers, Nondurable Goods",
+          },
+          {
+            label: "Mining (except Oil and Gas)",
+          },
+          {
+            label: "Mining, Quarrying, and Oil and Gas Extraction",
+          },
+          {
+            label: "Miscellaneous Manufacturing",
+          },
+          {
+            label: "Miscellaneous Store Retailers",
+          },
+          {
+            label: "Monetary Authorities - Central Bank",
+          },
+          {
+            label: "Motion Picture and Sound Recording Industries",
+          },
+          {
+            label: "Motor Vehicle and Parts Dealers",
+          },
+          {
+            label: "Museums, Historical Sites, and Similar Institutions",
+          },
+          {
+            label: "Natural Resources and Mining",
+          },
+          {
+            label: "Nonmetallic Mineral Product Manufacturing",
+          },
+          {
+            label: "Nonstore Retailers",
+          },
+          {
+            label: "Nursing and Residential Care Facilities",
+          },
+          {
+            label: "Oil and Gas Extraction",
+          },
+          {
+            label: "Other Information Services",
+          },
+          {
+            label: "Other Services (except Public Administration)",
+          },
+          {
+            label: "Paper Manufacturing",
+          },
+          {
+            label: "Performing Arts, Spectator Sports, and Related Industries",
+          },
+          {
+            label: "Personal and Laundry Services",
+          },
+          {
+            label: "Petroleum and Coal Products Manufacturing",
+          },
+          {
+            label: "Pipeline Transportation",
+          },
+          {
+            label: "Plastics and Rubber Products Manufacturing",
+          },
+          {
+            label: "Postal Service",
+          },
+          {
+            label: "Primary Metal Manufacturing",
+          },
+          {
+            label: "Printing and Related Support Activities",
+          },
+          {
+            label: "Private Households",
+          },
+          {
+            label: "Professional and Business Services",
+          },
+          {
+            label: "Professional, Scientific, and Technical Services",
+          },
+          {
+            label: "Publishing Industries (except Internet)",
+          },
+          {
+            label: "Rail Transportation",
+          },
+          {
+            label: "Real Estate",
+          },
+          {
+            label: "Real Estate and Rental and Leasing",
+          },
+          {
+            label:
+              "Religious, Grantmaking, Civic, Professional, and Similar Organizations",
+          },
+          {
+            label: "Rental and Leasing Services",
+          },
+          {
+            label: "Repair and Maintenance",
+          },
+          {
+            label: "Retail Trade",
+          },
+          {
+            label: "Scenic and Sightseeing Transportation",
+          },
+          {
+            label:
+              "Securities, Commodity Contracts, and Other Financial Investments and Related Activities",
+          },
+          {
+            label: "Service-Providing Industries",
+          },
+          {
+            label: "Social Assistance",
+          },
+          {
+            label: "Specialty Trade Contractors",
+          },
+          {
+            label: "Sporting Goods, Hobby, Book, and Music Stores",
+          },
+          {
+            label: "Support Activities for Agriculture and Forestry",
+          },
+          {
+            label: "Support Activities for Mining",
+          },
+          {
+            label: "Support Activities for Transportation",
+          },
+          {
+            label: "Telecommunications",
+          },
+          {
+            label: "Textile Mills",
+          },
+          {
+            label: "Textile Product Mills",
+          },
+          {
+            label: "Trade, Transportation, and Utilities",
+          },
+          {
+            label: "Transit and Ground Passenger Transportation",
+          },
+          {
+            label: "Transportation Equipment Manufacturing",
+          },
+          {
+            label: "Transportation and Warehousing",
+          },
+          {
+            label: "Truck Transportation",
+          },
+          {
+            label: "Utilities",
+          },
+          {
+            label: "Warehousing and Storage",
+          },
+          {
+            label: "Waste Management and Remediation Services",
+          },
+          {
+            label: "Water Transportation",
+          },
+          {
+            label: "Wholesale Electronic Markets and Agents and Brokers",
+          },
+          {
+            label: "Wholesale Trade",
+          },
+          {
+            label: "Wood Product Manufacturing",
+          },
+        ],
+        uri: null,
+      },
       placeholder: null,
       type: "dropdown",
       validationMessages: {
