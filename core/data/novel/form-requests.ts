@@ -120,11 +120,11 @@ export const NOVEL_COMPANY_INFORMATION: FormRequest = {
       type: "short_text",
       validationMessages: {
         emailAddress: null,
-        patterns: null,
+        patterns: ["Please enter a valid employer ID number (EIN)"],
         required: "Please enter your employer ID number (EIN)",
       },
       validations: {
-        patterns: null,
+        patterns: ["^\\d{2}-\\d{7}$"],
         required: true,
       },
       value: "94-2404110",
