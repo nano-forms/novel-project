@@ -1,0 +1,18 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "direction": "in",
+      "methods": ["post"],
+      "name": "req",
+      "route": "v1/webhooks/trustlink-africa/second",
+      "type": "httpTrigger"
+    },
+    {
+      "direction": "out",
+      "name": "res",
+      "type": "http"
+    }
+  ],
+  "scriptFile": "../dist/webhooks-trustlink-africa-second-post/index.js"
+}
