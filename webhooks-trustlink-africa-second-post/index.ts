@@ -38,8 +38,9 @@ const httpTrigger: AzureFunction = async function (
 
     context.res = {
       body: {
+        errorMessages: [],
         location: `https://trustlink.africa?token=${response.data.token}`,
-        ...body,
+        status: "ok",
       },
       status: 200,
     };

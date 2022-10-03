@@ -28,7 +28,11 @@ const httpTrigger: AzureFunction = async function (
     );
 
     context.res = {
-      body: { location: `/${secondForm.reference}`, ...body },
+      body: {
+        errorMessages: [],
+        location: `/${secondForm.reference}`,
+        status: "ok",
+      },
       status: 200,
     };
   } catch (error) {
