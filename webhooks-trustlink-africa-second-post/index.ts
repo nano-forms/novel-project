@@ -15,7 +15,7 @@ const httpTrigger: AzureFunction = async function (
     console.log(JSON.stringify(body.datum));
 
     context.res = {
-      body: { location: `https://https://trustlink.africa`, ...body },
+      body: { location: `https://trustlink.africa`, ...body },
       status: 200,
     };
   } catch (error) {
