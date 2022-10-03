@@ -526,7 +526,7 @@ export const NOVEL_COMPANY_INFORMATION: FormRequest = {
     },
     {
       disabled: false,
-      fieldType: null,
+      fieldType: "auto_complete_address",
       hint: "Please enter your U.S. business street address. Registered agent or virtual addresses are supported.",
       id: "businessAddress",
       label: "Business Address",
