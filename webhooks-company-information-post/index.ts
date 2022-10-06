@@ -12,6 +12,8 @@ const httpTrigger: AzureFunction = async function (
       form: Form;
     } = req.body;
 
+    console.log(JSON.stringify(body));
+
     try {
       await airtableUpsert(
         "Email Address",
