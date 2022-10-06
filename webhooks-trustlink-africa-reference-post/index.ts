@@ -1,5 +1,6 @@
 import { AzureFunction, Context, HttpRequest } from "@azure/functions";
 import { Datum, Form, FormRequest } from "@nano-forms/core";
+import axios from "axios";
 import { formClient } from "../core";
 
 const httpTrigger: AzureFunction = async function (
@@ -93,36 +94,40 @@ const httpTrigger: AzureFunction = async function (
     }
 
     if (req.params.reference === "fourth") {
-      // const response = await axios.post(
-      //   "https://api.trustlink.africa/accounts/billing",
-      //   {
-      //     fullName: body.datum.data.fullName,
-      //     emailAddress: body.datum.data.emailAddress,
-      //     mobileNumber: body.datum.data.mobileNumber,
-      //     companyName: body.datum.data.companyName,
-      //     industry: body.datum.data.industry,
-      //     provinceName: body.datum.data.province,
-      //     password: body.datum.data.password,
-      //     businessGoal: body.datum.data.goals,
-      //     referralCodeUsedToRegister: "",
-      //   }
-      // );
+      try {
+        const response = await axios.post(
+          "https://api.trustlink.africa/accounts/billing",
+          {
+            fullName: body.datum.data.fullName,
+            emailAddress: body.datum.data.emailAddress,
+            mobileNumber: body.datum.data.mobileNumber,
+            companyName: body.datum.data.companyName,
+            industry: body.datum.data.industry,
+            provinceName: body.datum.data.province,
+            password: body.datum.data.password,
+            businessGoal: body.datum.data.goals[0],
+            referralCodeUsedToRegister: "",
+          }
+        );
 
-      const response = {
-        data: {
-          token:
-            "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJMb2dpblRva2VuIiwiYXVkIjoie1wiaWRcIjoxNDI0LFwiZGF0ZVJlZ2lzdGVyZWRcIjoxNjY0Nzg4OTgwNDI3LFwiYWNjb3VudEFjdGl2ZVwiOnRydWV9IiwiaWF0IjoxNjY0Nzg4OTgwLCJleHAiOjE2Njc0NjczODAsImlzcyI6ImlmY2JfcG9ydGFsIn0._zyODSM2yaltpG2sOGcpGjikgFlXpi0M1BQGWbZN0K_ZRD3k4ZKV4I-oCOrqtVD4GTDFNtqYiXDeWBdsnZqNmA",
-        },
-      };
-
-      context.res = {
-        body: {
-          errorMessages: [],
-          location: `https://trustlink.africa?token=${response.data.token}`,
-          status: "ok",
-        },
-        status: 200,
-      };
+        context.res = {
+          body: {
+            errorMessages: [],
+            location: `https://trustlink.africa?token=${response.data.token}`,
+            status: "ok",
+          },
+          status: 200,
+        };
+      } catch {
+        context.res = {
+          body: {
+            errorMessages: [],
+            location: `https://trustlink.africa`,
+            status: "ok",
+          },
+          status: 200,
+        };
+      }
 
       return;
     }
