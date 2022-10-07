@@ -1,6 +1,6 @@
 import { AzureFunction, Context, HttpRequest } from "@azure/functions";
 import { Datum, Form, FormRequest } from "@nano-forms/core";
-import { airtableUpsert, formClient, NOVEL_COMPANY_DOCUMENTS } from "../core";
+import { airtableUpsert, formClient } from "../core";
 
 const httpTrigger: AzureFunction = async function (
   context: Context,
@@ -29,7 +29,7 @@ const httpTrigger: AzureFunction = async function (
       context.log(error.message);
     }
 
-    const companyInformationForm: Form = await formClient.createFromTemplate(
+    const previousForm: Form = await formClient.createFromTemplate(
       body.form,
       (formRequest: FormRequest) => {
         return {
@@ -40,26 +40,30 @@ const httpTrigger: AzureFunction = async function (
       body.datum.data
     );
 
-    const companyDocumentsForm: Form = await formClient.createFromTemplate(
-      NOVEL_COMPANY_DOCUMENTS,
+    const formTemplate: Form = await formClient.find("b132e7");
+
+    const form: Form = await formClient.createFromTemplate(
+      formTemplate,
       (formRequest: FormRequest) => {
         return {
           ...formRequest,
           actions: {
+            ...formRequest.actions,
             previous: {
-              uri: `/${companyInformationForm.reference}`,
+              ...formRequest.actions.previous,
+              uri: `/${previousForm.reference}`,
             },
           },
           dataReference: body.datum.reference,
         };
       },
-      body.datum.data
+      null
     );
 
     context.res = {
       body: {
         errorMessages: [],
-        location: `/${companyDocumentsForm.reference}`,
+        location: `/${form.reference}`,
         status: "ok",
       },
       status: 200,
