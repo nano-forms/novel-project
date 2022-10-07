@@ -14,6 +14,22 @@ const httpTrigger: AzureFunction = async function (
 
     console.log(JSON.stringify(body));
 
+    if (
+      typeof body.datum.data.emailAddress === "string" &&
+      body.datum.data.emailAddress.endsWith("@example.com")
+    ) {
+      context.res = {
+        body: {
+          errorMessages: [`An account already exists with this email address.`],
+          location: null,
+          status: "error",
+        },
+        status: 200,
+      };
+
+      return;
+    }
+
     try {
       await airtableUpsert(
         "Email Address",
