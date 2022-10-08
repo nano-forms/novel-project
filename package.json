@@ -10,8 +10,8 @@
     "test": "echo \"No tests yet...\""
   },
   "dependencies": {
-    "@nano-forms/core": "^0.2.0",
-    "axios": "^0.27.2",
+    "@nano-forms/core": "^0.2.1",
+    "axios": "^1.1.2",
     "tslib": "^2.4.0",
     "uuid": "^9.0.0"
   },
