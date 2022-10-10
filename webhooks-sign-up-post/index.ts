@@ -91,10 +91,11 @@ const httpTrigger: AzureFunction = async function (
 
     context.res = {
       body: {
-        message: error.message,
-        stack: error.stack,
+        errorMessages: [`Something went wrong, please try again later.`],
+        location: null,
+        status: "error",
       },
-      status: 500,
+      status: 200,
     };
   }
 };
